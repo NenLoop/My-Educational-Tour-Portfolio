@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-violet-black: #0E0816;
+  --color-violet-black-deep: #0B0612;
+  --color-obsidian-black: #07050C;
+}
