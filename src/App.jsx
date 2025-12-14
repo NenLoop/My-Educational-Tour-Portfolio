@@ -25,27 +25,22 @@ function App() {
 
   return (
     <>
-    <div className='fixed bg-white z-1 mx-auto max-w-xl top-4 pointer-event-auto'>
-      <div className="max-w-xl mx-auto flex items-center">
-        <div className="flex items-center ">
-          <a href="#home">Ren Louie Peralta</a>
-          <nav className="flex justify-center gap-5">
-            <a>Home</a>
-            <a>About</a>
-            <a>Tour</a>
-            <a>Github</a>
-          </nav>
-
+    <div className='fixed z-1 top-12 left-1/2 transform -translate-x-1/2 rounded-2xl bg-white shadow-md w-full md:w-auto'>
+      <div className="flex items-center justify-center space-x-12 px-6">
+        <p className="font-bold text-xl">Ren Louie Peralta</p>
+        <div>
+          <ul class="flex space-x-8 py-4 px-2">
+            <li><a className="text-lg font-medium" href="#home">Home</a></li>
+            <li><a className="text-lg font-medium" href="#about">About</a></li>
+            <li><a className="text-lg font-medium"  href="#tour">Tour</a></li>
+            <li><a className="text-lg font-medium" href="#contact">Contact</a></li>
+            <li><a className="text-lg font-medium" href="#">Github</a></li>
+          </ul>
         </div>
       </div>
-
     </div>
-    
     <div id="home" className="h-screen pt-16 relative flex items-center">
-      
-      <div className="h-screen absolute inset-0" id="vanta"> 
-
-      </div>
+      <div className="h-screen absolute inset-0" id="vanta"></div>
       <div className="relative mx-auto max-w-2xl">
         <div className="text-center">
           <h1 className="text-7xl text-amber-600 font-bold">Ren Louie Peralta</h1>
@@ -71,13 +66,43 @@ function App() {
         </div>
       </div>
     </div>
-    <div id="about" className='h-screen'>
+    <div id="about" className='h-screen bg-amber-600'>
+      <div className='mx-auto max-w-xl text-center'>
+        <h2 className="text-2xl font-medium inline">Test Center</h2>
+        <h2 className="text-2xl font-medium inline">Test Center</h2>
+      </div>
 
     </div>
     <div id="tour" className='h-screen'>
+      <div className='mx-auto max-w-xl text-center'>
+        <h2 className="text-2xl font-medium inline">Tour Experience</h2>
+        <div className="flex flex-wrap justify-center">
+          <button>Companies</button>
+          <button>Certificate</button>
+          <button>Reflection</button>
+          
+        </div>
+      </div>
 
     </div>
-    <div id="footer" className='h-screen'>
+    <div id="contact" className='h-screen'>
+
+    </div>
+    <div id="footer" className='max-h-48 overflow-hidden bg-black text-white text-center'>
+      <p className="text-lg font-medium">© 2024 Ren Louie Peralta. All rights reserved.</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
+      <p>Footer</p>
 
     </div>
 
