@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import { MdOutlinePlace } from "react-icons/md";
 import { GrCertificate } from "react-icons/gr"
+import { FiMenu, FiX } from "react-icons/fi";
 import { SiMinds } from "react-icons/si";
 import 'devicon/devicon.min.css'
 import { useState, useEffect } from 'react'
@@ -10,6 +11,7 @@ import './App.css'
 function App() {
   const [activeCategory, setActiveCategory] = useState("companies");
   const [isOpen, setIsOpen] = useState(false)
+  const [isNav, setIsNav] = useState(false)
   const [modalSrc, setModalSrc] = useState('') // which image to show
 
   const openModal = (src) => {
@@ -45,32 +47,60 @@ function App() {
 
   return (
     <>
-    <div className='fixed z-1 top-12 left-1/2 transform -translate-x-1/2 rounded-2xl border-gray-400 border-2 bg-black/12 backdrop-blur-2xl shadow-2xl w-full md:w-auto '>
-      <div className="flex items-center justify-center space-x-12 px-6">
-        <p className="font-bold text-xl text-neon-purple">Ren Louie Peralta</p>
-        <div>
-          <ul className="flex space-x-8 py-4 px-2">
+    <div className="fixed z-50 top-12 left-1/2 -translate-x-1/2
+                    rounded-2xl border border-white/20
+                    bg-black/20 backdrop-blur-2xl shadow-2xl
+                    w-[95%] md:w-auto">
+
+      {/* Main Nav */}
+      <div className="flex items-center justify-between md:justify-center
+                      px-6 py-4 md:space-x-12">
+
+        {/* Brand */}
+        <p className="font-bold text-lg md:text-xl text-neon-purple">
+          Ren Louie Peralta
+        </p>
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center space-x-8">
+          <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("home")}>Home</button></li>
+          <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("about")}>About</button></li>
+          <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("tour")}>Tour</button></li>
+          <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("footer")}>Contact</button></li>
+          <li>
+            <a href="https://github.com/NenLoop" target="_blank" rel="noreferrer">
+              <i className="devicon-github-plain text-2xl text-gray-300 hover:text-purple-400 transition" />
+            </a>
+          </li>
+        </ul>
+
+        {/* Mobile Burger */}
+        <button
+          className="md:hidden text-off-white text-2xl"
+          onClick={() => setIsNav(!isNav)}
+        >
+          {isNav ? <FiX /> : <FiMenu />}
+        </button>
+      </div>
+
+      {/* Mobile Dropdown */}
+      {isNav && (
+        <div className="md:hidden border-t border-white/10
+                        bg-black/40 backdrop-blur-xl
+                        rounded-b-2xl">
+          <ul className="flex flex-col items-center py-4 space-y-4">
+            <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("home")}>Home</button></li>
+            <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("about")}>About</button></li>
+            <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("tour")}>Tour</button></li>
+            <li><button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection("footer")}>Contact</button></li>
             <li>
-              <button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection('home')}>Home</button>
-            </li>
-            <li>
-              <button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection('about')}>About</button>
-            </li>
-            <li>
-              <button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection('tour')}>Tour</button>
-            </li>
-            <li>
-              <button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection('footer')}>Contact</button>
-            </li>
-            <li>
-              <a className="text-lg text-off-white font-medium" target="_blank" href="https://github.com/NenLoop">
-                <i className="devicon-github-plain text-3xl text-gray-300 hover:text-purple-400 transition duration-300 cursor-pointer">
-                </i>
-                </a>
+              <a href="https://github.com/NenLoop" target="_blank" rel="noreferrer">
+                <i className="devicon-github-plain text-2xl text-gray-300 hover:text-purple-400 transition" />
+              </a>
             </li>
           </ul>
         </div>
-      </div>
+      )}
     </div>
     <div id="home" className="h-screen pt-16 relative flex items-center">
       <div className="h-screen absolute inset-0" id="vanta"></div>
@@ -216,32 +246,41 @@ function App() {
     </div>
     <div id="tour" className='h-full bg-obsidian-black scroll-mt-18 py-28'>
       <div className='mx-auto max-w-3xl items-center text-center text-off-white'>
-        <div className="relative flex justify-center gap-32 mt-6 p-2 max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-purple-900/40 via-purple-800/30 to-purple-900/40 backdrop-blur-xl border border-white/10 shadow-lg shadow-purple-950/40">
+      <div className="relative mt-6 p-2 max-w-4xl mx-auto
+                  grid grid-cols-3 gap-2 sm:gap-4
+                  rounded-2xl bg-gradient-to-r
+                  from-purple-900/40 via-purple-800/30 to-purple-900/40
+                  backdrop-blur-xl border border-white/10
+                  shadow-lg shadow-purple-950/40"
+      >
         {/* Active pill */}
         <div className={`absolute top-2 bottom-2 w-1/3 rounded-xl bg-gradient-to-r from-purple-600/60 to-fuchsia-600/60 backdrop-blur-xl shadow-lg transition-all duration-300
-            ${activeCategory === "companies" && "left-2"}
-            ${activeCategory === "certificate" && "left-[33.5%]"}
-            ${activeCategory === "reflection" && "left-[66%]"}
+            ${activeCategory === "companies" && "left-0"}
+            ${activeCategory === "certificate" && "left-1/3"}
+            ${activeCategory === "reflection" && "left-2/3"}
           `}
         />
-          <button onClick={() => setActiveCategory("companies")} className="relative z-10 px-6 py-2 text-white/80">
+          <button onClick={() => setActiveCategory("companies")} className="relative z-10 flex flex-col items-center justify-center
+               py-2 sm:py-3 text-xs sm:text-sm text-white/80">
             <div className="items-center flex flex-col">
               <MdOutlinePlace size={22}/>
-              <p>Companies</p>
+              <span className="mt-1">Companies</span>
             </div>
           </button>
 
-          <button onClick={() => setActiveCategory("certificate")} className="relative z-10 px-6 py-2 text-white/80">
+          <button onClick={() => setActiveCategory("certificate")} className="relative z-10 flex flex-col items-center justify-center
+               py-2 sm:py-3 text-xs sm:text-sm text-white/80">
             <div className="items-center flex flex-col">
               <GrCertificate size={22}/>
-              <p>Certificate</p>
+              <span className="mt-1">Certificate</span>
             </div>
           </button>
 
-          <button onClick={() => setActiveCategory("reflection")} className="relative z-10 px-6 py-2 text-white/80">
+          <button onClick={() => setActiveCategory("reflection")} className="relative z-10 flex flex-col items-center justify-center
+               py-2 sm:py-3 text-xs sm:text-sm text-white/80">
           <div className="items-center flex flex-col">
               <SiMinds size={22}/>
-              <p>Reflection</p>
+              <span className="mt-1">Reflection</span>
             </div>
           </button>
   
@@ -251,32 +290,38 @@ function App() {
 
           {/* PLDT and Vitro Inc.*/}
 
-          <div className="flex flex-col md:flex-row py-10 items-start gap-16"> 
-            <div className='flex-1 text-left'> 
+          <div className="flex flex-col md:flex-row py-10 items-center md:items-start gap-12 md:gap-16"> 
+            <div className='flex-1 text-center md:text-left flex flex-col items-center md:items-start'> 
               <h1 className='text-2xl font-semibold max-w-md'>PLDT & Vitro INC. Tour</h1>
               <img src="/pictures/pldt-vitro.png"
               alt="Profile"
               className="w-full max-w-md object-cover rounded-lg mt-6"/>
             </div>
-            <div className='flex-1 text-left xl:mt-13 mt-0'>
+            <div className='flex-1 text-center md:text-left mt-6 md:mt-0'>
               <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 8:30 A.M</h1>
-              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
-              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
-              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>
+                PLDT and Vitro Inc. operate on the service provider and infrastructure side of the technology industry, playing a vital role in connecting Filipino households to the global digital space. Upon entering the facility, we experienced a strict seven-step security and verification process, reflecting the high standards required to protect sensitive data and critical systems. The visit continued with a seminar discussing PLDT’s services, its partner companies, and how Vitro Inc. uniquely functions as an infrastructure and data center provider that hosts and maintains servers for other organizations.
+                </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>
+                Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.
+                </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>
+                Observations: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.
+                </h1>
             </div>
           </div>
           
 
           {/* JairoSoft */}
 
-          <div className="flex flex-col md:flex-row py-10 items-start gap-16"> 
-            <div className='flex-1 text-left'> 
+          <div className="flex flex-col md:flex-row py-10 items-center md:items-start gap-12 md:gap-16"> 
+            <div className='flex-1 text-center md:text-left flex flex-col items-center md:items-start'> 
               <h1 className='text-2xl font-semibold max-w-md'>JairoSoft Company Tour</h1>
               <img src="/pictures/jairosoft.png"
               alt="Profile"
               className="w-full max-w-md object-cover rounded-lg mt-6"/>
             </div>
-            <div className='flex-1 text-left xl:mt-13 mt-0'>
+            <div className='flex-1 text-center md:text-left mt-6 md:mt-0'>
               <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 2:00 P.M.</h1>
               <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
               <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
@@ -287,14 +332,15 @@ function App() {
 
           {/* DCCMERC */}
 
-          <div className="flex flex-col md:flex-row py-10 items-start gap-16"> 
-            <div className='flex-1 text-left'> 
+          <div className="flex flex-col md:flex-row py-10 gap-12 md:gap-16 
+                items-center md:items-start"> 
+            <div className='flex-1 text-center md:text-left flex flex-col items-center md:items-start'> 
               <h1 className='text-2xl font-semibold max-w-md'>Davao City Central Communications & Emergency Response Center Tour</h1>
               <img src="/pictures/central-911-1.png"
               alt="Profile"
               className="w-full max-w-md object-cover rounded-lg mt-6"/>
             </div>
-            <div className='flex-1 text-left xl:mt-13 mt-0'>
+            <div className='flex-1 text-center md:text-left mt-6 md:mt-0'>
               <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 4:00 P.M.</h1>
               <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
               <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
