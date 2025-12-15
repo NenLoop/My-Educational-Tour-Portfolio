@@ -245,7 +245,7 @@ function App() {
       </div>
     </div>
     <div id="tour" className='h-full bg-obsidian-black scroll-mt-18 py-28'>
-      <div className='mx-auto max-w-3xl items-center text-center text-off-white'>
+      <div className='mx-auto max-w-4xl items-center text-center text-off-white'>
       <div className="relative mt-6 p-2 max-w-4xl mx-auto
                   grid grid-cols-3 gap-2 sm:gap-4
                   rounded-2xl bg-gradient-to-r
@@ -303,10 +303,10 @@ function App() {
                 PLDT and Vitro Inc. operate on the service provider and infrastructure side of the technology industry, playing a vital role in connecting Filipino households to the global digital space. Upon entering the facility, we experienced a strict seven-step security and verification process, reflecting the high standards required to protect sensitive data and critical systems. The visit continued with a seminar discussing PLDT’s services, its partner companies, and how Vitro Inc. uniquely functions as an infrastructure and data center provider that hosts and maintains servers for other organizations.
                 </h1>
               <h1 className='text-lg text-slate-gray mb-3'>
-                Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.
+                Learnings: Through this visit, I learned the importance of security, reliability, and redundancy in large-scale technology operations. Vitro Inc.’s data centers demonstrated how server environments are carefully maintained using advanced cooling systems, strict access control, and continuous monitoring. These practices ensure long-term stability and minimize downtime, allowing the company to deliver near 100% service availability despite potential power or system disruptions.
                 </h1>
               <h1 className='text-lg text-slate-gray mb-3'>
-                Observations: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.
+                Observations: Seeing the protected servers firsthand highlighted the complexity behind services that users often take for granted. The level of maintenance, power backup systems, and physical security reinforced the reality that reliable internet services depend on massive infrastructure and precise engineering. This experience deepened my appreciation for the unseen backbone of the digital world.
                 </h1>
             </div>
           </div>
@@ -319,13 +319,19 @@ function App() {
               <h1 className='text-2xl font-semibold max-w-md'>JairoSoft Company Tour</h1>
               <img src="/pictures/jairosoft.png"
               alt="Profile"
-              className="w-full max-w-md object-cover rounded-lg mt-6"/>
+              className="w-full  max-w-md object-cover rounded-lg mt-6"/>
             </div>
             <div className='flex-1 text-center md:text-left mt-6 md:mt-0'>
               <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 2:00 P.M.</h1>
-              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
-              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
-              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>
+                JairoSoft is an emerging technology company aiming to become one of the first AI-driven organizations in the Philippines. During the visit, we were introduced to their products, including .bubble, a drag-and-drop website builder designed to simplify web development. The company operates through specialized teams that collaborate to build tailored applications for clients, supported by modern networking equipment and development tools.
+              </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>
+                Learnings: The visit emphasized how innovation and adaptability define modern tech companies. JairoSoft’s workflow demonstrated how teamwork, creativity, and efficient tools contribute to rapid development cycles. Their approach showed that success in the tech industry relies not only on technical skill, but also on collaboration and problem-solving.
+              </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>
+                Observations: What stood out most was the welcoming and professional culture within the company. The environment felt motivating and inclusive, making it a place where learning and growth are encouraged. This visit strengthened my interest in pursuing an internship at JairoSoft, as it aligns closely with my career aspirations in technology and software development.
+              </h1>
             </div>
           </div>
           
@@ -342,9 +348,15 @@ function App() {
             </div>
             <div className='flex-1 text-center md:text-left mt-6 md:mt-0'>
               <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 4:00 P.M.</h1>
-              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
-              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
-              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>
+                The Davao City Central 911 operates as an advanced emergency response and monitoring center. Inside the facility, we observed a large multi-display system used to monitor CCTV feeds across the city, including rivers, coastal areas, and major roads. These systems help detect potential flooding, monitor sea levels, and ensure public safety. The center also utilizes a rescue management application developed internally over several years to coordinate emergency responses. 
+              </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>
+                Learnings: This visit revealed how technology directly supports public safety and disaster response. The system tracks incidents in real time, identifies nearby responders, and sends immediate notifications to ensure rapid action. It demonstrated how software, data, and hardware integration can save lives and improve emergency efficiency.
+              </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>
+                Observations: I was impressed by the scale and quality of the equipment used, some of which cost millions of pesos due to their advanced capabilities. High-resolution cameras with long-range zoom and automated lighting for nighttime river monitoring highlighted the government’s capacity to invest in modern technology. This experience showed how technology plays a crucial role not only in private industries, but also in public service and community protection.
+              </h1>
             </div>
           </div>
           
