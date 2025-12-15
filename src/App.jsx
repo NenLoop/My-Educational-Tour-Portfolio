@@ -23,23 +23,40 @@ function App() {
     })
   }, [])
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <>
-    <div className='fixed z-1 top-12 left-1/2 transform -translate-x-1/2 rounded-2xl bg-white shadow-md w-full md:w-auto'>
+    <div className="scroll-smooth">
+    <div className='fixed z-1 top-12 left-1/2 transform -translate-x-1/2 rounded-2xl bg-white shadow-md w-full md:w-auto '>
       <div className="flex items-center justify-center space-x-12 px-6">
         <p className="font-bold text-xl">Ren Louie Peralta</p>
         <div>
           <ul className="flex space-x-8 py-4 px-2">
-            <li><a className="text-lg font-medium" href="#home">Home</a></li>
-            <li><a className="text-lg font-medium" href="#about">About</a></li>
-            <li><a className="text-lg font-medium"  href="#tour">Tour</a></li>
-            <li><a className="text-lg font-medium" href="#contact">Contact</a></li>
-            <li><a className="text-lg font-medium" href="#">Github</a></li>
+          <li>
+              <button className="text-lg font-medium" onClick={() => scrollToSection('home')}>Home</button>
+            </li>
+            <li>
+              <button className="text-lg font-medium" onClick={() => scrollToSection('about')}>About</button>
+            </li>
+            <li>
+              <button className="text-lg font-medium" onClick={() => scrollToSection('tour')}>Tour</button>
+            </li>
+            <li>
+              <button className="text-lg font-medium" onClick={() => scrollToSection('contact')}>Contact</button>
+            </li>
+            <li>
+              <a className="text-lg font-medium" href="#">Github</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-    <div id="home" className="h-screen pt-16 relative flex items-center">
+    <div id="home" className="h-screen pt-16 relative flex items-center scroll-smooth">
       <div className="h-screen absolute inset-0" id="vanta"></div>
       <div className="relative mx-auto max-w-2xl">
         <div className="text-center">
@@ -96,7 +113,7 @@ function App() {
         </div>
       </div>
     </div>
-    <div id="about" className="min-h-screen bg-violet-black text-white scroll-mt-18 flex py-24">
+    <div id="about" className="min-h-screen bg-violet-black text-white scroll-mt-18 flex py-28 scroll-smooth">
       <div className="mx-auto w-full max-w-7xl px-6">
 
         {/* Main Content */}
@@ -107,7 +124,7 @@ function App() {
             <img
               src="/pictures/prof.png"
               alt="Profile"
-              className="w-64 h-64 object-cover rounded-lg"
+              className="w-68 h-64 object-cover rounded-lg"
             />
           </div>
 
@@ -133,17 +150,26 @@ function App() {
             </p>
 
             {/* Age / Info */}
-            <div className="text-sm text-gray-300 space-y-1">
-              <p>20 Years Old</p>
-              <p>3rd Year Level</p>
-              <p>BSIT – Program Course</p>
-            </div>
+          </div>
+        </div>
+        <div className="mx-auto max-w-4xl items-center flex flex-wrap justify-center mt-18 gap-12 text-sm text-gray-300 space-y-1">
+          <div className="bg-purple-600 w-48 py-8 text-center">
+            <p className='mb-2 text-xl'>20</p>
+            <p className='text-xl'>Years Old</p>
+          </div>
+          <div className="bg-purple-600 w-48 py-8 text-center">
+            <p className='mb-2 text-xl'>Third</p>
+            <p className='text-xl'>Year Level</p>
+          </div>
+          <div className="bg-purple-600 w-48 py-8 text-center">
+            <p className='mb-2 text-xl'>BSIT</p>
+            <p className='text-xl'>Course Program</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="tour" className='h-screen'>
+    <div id="tour" className='h-screen scroll-smooth'>
       <div className='mx-auto max-w-xl items-center text-center py-10'>
         <h2 className="text-2xl font-medium inline">Tour Experience</h2>
         <div className="flex flex-wrap justify-center">
@@ -155,7 +181,7 @@ function App() {
       </div>
 
     </div>
-    <div id="contact" className='h-screen'>
+    <div id="contact" className='h-screen scroll-smooth'>
 
     </div>
     <div id="footer" className='max-h-48 overflow-hidden bg-black text-white text-center'>
@@ -167,7 +193,7 @@ function App() {
       <p>Footer</p>
     </div>
 
-    </>
+    </div>
 
   )
 }
