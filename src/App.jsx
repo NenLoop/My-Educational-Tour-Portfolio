@@ -29,7 +29,7 @@ function App() {
       <div className="flex items-center justify-center space-x-12 px-6">
         <p className="font-bold text-xl">Ren Louie Peralta</p>
         <div>
-          <ul class="flex space-x-8 py-4 px-2">
+          <ul className="flex space-x-8 py-4 px-2">
             <li><a className="text-lg font-medium" href="#home">Home</a></li>
             <li><a className="text-lg font-medium" href="#about">About</a></li>
             <li><a className="text-lg font-medium"  href="#tour">Tour</a></li>
@@ -45,36 +45,106 @@ function App() {
         <div className="text-center">
           <h1 className="text-7xl text-amber-600 font-bold">Ren Louie Peralta</h1>
           <h2 className="text-5xl text-amber-600 font-bold mt-4">Self Taught Web Developer</h2>
-          <h3 className="text-2xl text-amber-600 font-medium mt-4">Davao City, Philippines</h3>
+          <h3 className="text-2xl text-amber-600 font-medium mt-6">Davao City, Philippines</h3>
           <h2 className="text-3xl text-amber-600 font-medium mt-4">I Specialized in sleeping</h2>
-          <div className="mt-4">
-            <button className="text-2xl text-amber-600 font-medium mt-2">Contact Me</button>
-            <button className="text-2xl text-amber-600 font-medium mt-2">My Contributions</button>
+          <div className="flex flex-row justify-center mt-4 space-x-6">
+            <button className="text-2xl p-4  bg-amber-600 font-medium mt-2">Contact Me</button>
+            <button className="text-2xl p-4 bg-amber-600 font-medium mt-2">My Contributions</button>
           </div>
           <div>
             <h1 className="text-2xl text-amber-600 font-medium mt-8"> Tech Stack</h1>
-            <div className="mt-4">
-              <span className="text-2xl text-amber-600 font-medium">HTML</span>
-              <span className="text-2xl text-amber-600 font-medium">CSS</span>
-              <span className="text-2xl text-amber-600 font-medium">JavaScript</span>
-              <span className="text-2xl text-amber-600 font-medium">React.js</span>
-              <span className="text-2xl text-amber-600 font-medium">Vite.js</span>
-              <span className="text-2xl text-amber-600 font-medium">Tailwind CSS</span>
-              <span className="text-2xl text-amber-600 font-medium">GitHub</span>
+            <div className="flex flex-wrap space-x-8 justify-center">
+              <div className='relative group inline-block  mt-8'>
+                <img src='/icons/javascript-logo-final.png' className='w-10 h-10'/>
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
+                  JavaScript
+                </span>
+              </div>
+              <div className='relative group inline-block  mt-8'>
+                <img src='/icons/tailwind-logo.png' className='w-10 h-10'/> 
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
+                 Tailwind
+                </span>
+              </div>
+              <div className='relative group inline-block  mt-8'>
+                <img src='/icons/java-logo.png' className='w-10 h-10'/>
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
+                  Java
+                </span>
+              </div>
+              <div className='relative group inline-block  mt-8'>
+                <img src='/icons/python-logo-removebg-preview.png' className='w-10 h-10'/>
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
+                  Python
+                </span>
+              </div>
+              <div className='relative group inline-block  mt-8'>
+                <img src='/icons/django-logo.png' className='w-10 h-10'/>
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
+                  Django
+                </span>
+              </div>
+              <div className='relative group inline-block  mt-8'>
+                <img src='/icons/postgresql-logo-final.png' className='w-10 h-10'/>
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
+                  PostgreSQL
+                </span>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="about" className='h-screen bg-amber-600'>
-      <div className='mx-auto max-w-xl text-center'>
-        <h2 className="text-2xl font-medium inline">Test Center</h2>
-        <h2 className="text-2xl font-medium inline">Test Center</h2>
-      </div>
+    <div id="about" className="min-h-screen bg-violet-black text-white scroll-mt-18 flex py-24">
+      <div className="mx-auto w-full max-w-7xl px-6">
 
+        {/* Main Content */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-16 md:gap-32">
+          
+          {/* Image */}
+          <div className="md:w-1/3 flex justify-center">
+            <img
+              src="/pictures/prof.png"
+              alt="Profile"
+              className="w-64 h-64 object-cover rounded-lg"
+            />
+          </div>
+
+          {/* Text Content */}
+          <div className="md:w-2/3 text-left">
+            <p className="text-4xl font-bold mb-4">
+              Hello, I'm Ren Louie
+            </p>
+            <p className="text-2xl font-semi mb-4">
+              Aspiring Network Engineer
+            </p>
+
+            <p className="text-lg mb-4">
+              My journey into web development began with a curiosity for how websites are built and function. Over the years, I've honed my skills in various technologies, including JavaScript, Tailwind CSS, Java, Python, Django, and PostgreSQL.
+            </p>
+
+            <p className="text-lg mb-4">
+              When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and collaborating with fellow developers to create innovative solutions.
+            </p>
+
+            <p className="text-lg mb-6">
+              Feel free to explore my portfolio and get in touch if you'd like to collaborate or learn more about my work!
+            </p>
+
+            {/* Age / Info */}
+            <div className="text-sm text-gray-300 space-y-1">
+              <p>20 Years Old</p>
+              <p>3rd Year Level</p>
+              <p>BSIT – Program Course</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div id="tour" className='h-screen'>
-      <div className='mx-auto max-w-xl text-center'>
+      <div className='mx-auto max-w-xl items-center text-center py-10'>
         <h2 className="text-2xl font-medium inline">Tour Experience</h2>
         <div className="flex flex-wrap justify-center">
           <button>Companies</button>
@@ -95,15 +165,6 @@ function App() {
       <p>Footer</p>
       <p>Footer</p>
       <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-
     </div>
 
     </>

@@ -1,0 +1,23 @@
+<div id="about" className='h-screen bg-violet-black text-white'>
+      <div className='mx-auto max-w-8xl py-10'>
+        <h2 className="text-2xl font-bold inline mt-10">About Me</h2>
+        
+        <div className='flex flex-wrap justify-center mt-8'>
+          <div className='max-w-sm'>
+            <img src="/pictures/prof.png" className='w-1/4 h-1/4'/>
+          </div>
+          <div className='max-w-lg'>
+            <p className="text-lg mt-4">Hello! I'm Ren Louie Peralta, a self-taught web developer based in Davao City, Philippines. I have a passion for creating dynamic and responsive web applications that provide seamless user experiences.</p>
+            <p className="text-lg mt-4">My journey into web development began with a curiosity for how websites are built and function. Over the years, I've honed my skills in various technologies, including JavaScript, Tailwind CSS, Java, Python, Django, and PostgreSQL.</p>
+            <p className="text-lg mt-4">When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and collaborating with fellow developers to create innovative solutions.</p>
+            <p className="text-lg mt-4">Feel free to explore my portfolio and get in touch if you'd like to collaborate or learn more about my work!</p>
+          </div>
+        </div>
+        <div>
+          <p>20 Years Old</p>
+          <p>3rd Year Level</p>
+          <p>BSIT - Program Course</p>
+        </div>
+      </div>
+
+    </div>
