@@ -1,8 +1,14 @@
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
+import { MdOutlinePlace } from "react-icons/md";
+import { GrCertificate } from "react-icons/gr"
+import { SiMinds } from "react-icons/si";
+import 'devicon/devicon.min.css'
 import { useState, useEffect } from 'react'
-import './App.css'
 import WAVES from 'vanta/src/vanta.waves'
+import './App.css'
 
 function App() {
+  const [activeCategory, setActiveCategory] = useState("companies");
   const [isOpen, setIsOpen] = useState(false)
   const [modalSrc, setModalSrc] = useState('') // which image to show
 
@@ -44,7 +50,7 @@ function App() {
         <p className="font-bold text-xl text-neon-purple">Ren Louie Peralta</p>
         <div>
           <ul className="flex space-x-8 py-4 px-2">
-          <li>
+            <li>
               <button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection('home')}>Home</button>
             </li>
             <li>
@@ -57,7 +63,10 @@ function App() {
               <button className="text-lg text-off-white cursor-pointer font-medium" onClick={() => scrollToSection('footer')}>Contact</button>
             </li>
             <li>
-              <a className="text-lg text-off-white font-medium" target="_blank" href="https://github.com/NenLoop">Github</a>
+              <a className="text-lg text-off-white font-medium" target="_blank" href="https://github.com/NenLoop">
+                <i className="devicon-github-plain text-3xl text-gray-300 hover:text-purple-400 transition duration-300 cursor-pointer">
+                </i>
+                </a>
             </li>
           </ul>
         </div>
@@ -205,25 +214,250 @@ function App() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
       </div>
     </div>
-    <div id="tour" className='h-screen bg-obsidian-black'>
-      <div className='mx-auto max-w-xl items-center text-center py-10'>
-        <h2 className="text-2xl font-medium inline">Tour Experience</h2>
-        <div className="flex flex-wrap justify-center">
-          <button>Companies</button>
-          <button>Certificate</button>
-          <button>Reflection</button>
+    <div id="tour" className='h-full bg-obsidian-black scroll-mt-18 py-28'>
+      <div className='mx-auto max-w-3xl items-center text-center text-off-white'>
+        <div className="relative flex justify-center gap-32 mt-6 p-2 max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-purple-900/40 via-purple-800/30 to-purple-900/40 backdrop-blur-xl border border-white/10 shadow-lg shadow-purple-950/40">
+        {/* Active pill */}
+        <div className={`absolute top-2 bottom-2 w-1/3 rounded-xl bg-gradient-to-r from-purple-600/60 to-fuchsia-600/60 backdrop-blur-xl shadow-lg transition-all duration-300
+            ${activeCategory === "companies" && "left-2"}
+            ${activeCategory === "certificate" && "left-[33.5%]"}
+            ${activeCategory === "reflection" && "left-[66%]"}
+          `}
+        />
+          <button onClick={() => setActiveCategory("companies")} className="relative z-10 px-6 py-2 text-white/80">
+            <div className="items-center flex flex-col">
+              <MdOutlinePlace size={22}/>
+              <p>Companies</p>
+            </div>
+          </button>
+
+          <button onClick={() => setActiveCategory("certificate")} className="relative z-10 px-6 py-2 text-white/80">
+            <div className="items-center flex flex-col">
+              <GrCertificate size={22}/>
+              <p>Certificate</p>
+            </div>
+          </button>
+
+          <button onClick={() => setActiveCategory("reflection")} className="relative z-10 px-6 py-2 text-white/80">
+          <div className="items-center flex flex-col">
+              <SiMinds size={22}/>
+              <p>Reflection</p>
+            </div>
+          </button>
+  
+        </div>
+        {activeCategory === "companies" && 
+        <div className='mx-auto max-w-7xl'>
+
+          {/* PLDT and Vitro Inc.*/}
+
+          <div className="flex flex-col md:flex-row py-10 items-start gap-16"> 
+            <div className='flex-1 text-left'> 
+              <h1 className='text-2xl font-semibold max-w-md'>PLDT & Vitro INC. Tour</h1>
+              <img src="/pictures/pldt-vitro.png"
+              alt="Profile"
+              className="w-full max-w-md object-cover rounded-lg mt-6"/>
+            </div>
+            <div className='flex-1 text-left xl:mt-13 mt-0'>
+              <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 8:30 A.M</h1>
+              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+            </div>
+          </div>
+          
+
+          {/* JairoSoft */}
+
+          <div className="flex flex-col md:flex-row py-10 items-start gap-16"> 
+            <div className='flex-1 text-left'> 
+              <h1 className='text-2xl font-semibold max-w-md'>JairoSoft Company Tour</h1>
+              <img src="/pictures/jairosoft.png"
+              alt="Profile"
+              className="w-full max-w-md object-cover rounded-lg mt-6"/>
+            </div>
+            <div className='flex-1 text-left xl:mt-13 mt-0'>
+              <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 2:00 P.M.</h1>
+              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+            </div>
+          </div>
+          
+
+          {/* DCCMERC */}
+
+          <div className="flex flex-col md:flex-row py-10 items-start gap-16"> 
+            <div className='flex-1 text-left'> 
+              <h1 className='text-2xl font-semibold max-w-md'>Davao City Central Communications & Emergency Response Center Tour</h1>
+              <img src="/pictures/central-911-1.png"
+              alt="Profile"
+              className="w-full max-w-md object-cover rounded-lg mt-6"/>
+            </div>
+            <div className='flex-1 text-left xl:mt-13 mt-0'>
+              <h1 className='text-lg text-slate-gray mb-3'>November 14, 2025 - 4:00 P.M.</h1>
+              <h1 className='text-lg text-slate-gray mb-3 tracking-normal'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis diam, ultrices ac leo eu, dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. </h1>
+              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+              <h1 className='text-lg text-slate-gray mb-3'>Learnings: dapibus rhoncus est. Praesent ut elit in ligula porttitor facilisis ac et est. Suspendisse elementum ligula dui, ut congue orci sagittis quis. Cras et nunc in lorem iaculis faucibus. In ultricies ut tortor commodo rhoncus. Nam sapien dui, porta sed luctus in, blandit ac tellus. Integer a sollicitudin lectus.</h1>
+            </div>
+          </div>
           
         </div>
+        }
+
+        {activeCategory === "certificate" && (
+          <div className="mx-auto max-w-5xl mt-16 px-4">
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-purple-900/30 backdrop-blur-xl border border-white/10 shadow-lg shadow-purple-950/40">
+
+              {/* Certificate Image */}
+              <img
+                src="/pictures/certificate.jpg"
+                alt="Certificate"
+                className="w-full h-auto object-contain max-h-[520px] mx-auto p-6"
+              />
+
+              {/* Overlay Info */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-obsidian-black/90 via-obsidian-black/60 to-transparent px-6 py-4">
+                <h2 className="text-lg font-semibold text-off-white">
+                  Certificate of Completion
+                </h2>
+                <p className="text-sm text-slate-gray">
+                  Issued on November 20, 2025
+                </p>
+                <p className="mt-2 text-sm text-white/70 max-w-3xl">
+                  Awarded for successfully completing the industry immersion and
+                  company tour program, demonstrating active participation and
+                  professional engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeCategory === "reflection" && (
+          <div className="mx-auto max-w-5xl mt-16 px-4">
+            <div className="rounded-2xl bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-purple-900/30 backdrop-blur-xl border border-white/10 shadow-lg shadow-purple-950/40 p-10 text-left">
+
+              <h1 className="text-2xl font-semibold text-off-white mb-6">
+                Reflection on the Education Davao Industry Immersion
+              </h1>
+
+              <p className="text-slate-gray leading-relaxed mb-6">
+                The Education Davao Industry Immersion broadened my perspective on the
+                technology industry and challenged many of my initial assumptions.
+                I once believed that opportunities in tech were limited and difficult
+                to attain, but visiting real companies and interacting with professionals
+                showed me that the industry is more accessible than I had imagined.
+              </p>
+
+              <p className="text-slate-gray leading-relaxed mb-6">
+                Being immersed in real work environments allowed me to see how
+                collaboration, discipline, and continuous learning shape success.
+                Meeting individuals who are actively working in the field made the
+                experience feel tangible and inspiring, transforming what was once
+                only a future goal into a realistic career path.
+              </p>
+
+              <ul className="list-disc list-inside text-slate-gray space-y-3 mb-6">
+                <li>Gained firsthand exposure to professional tech environments</li>
+                <li>Realized that growth and adaptability are key industry values</li>
+                <li>Strengthened my confidence in pursuing a tech-related career</li>
+              </ul>
+
+              <p className="text-slate-gray leading-relaxed">
+                Overall, the immersion provided me with renewed motivation and a
+                clearer sense of purpose. It reinforced my determination to continue
+                developing my skills and move one step closer toward my goal of
+                working in the technology industry.
+              </p>
+
+            </div>
+          </div>
+        )}
       </div>
 
     </div>
-    <div id="footer" className='max-h-48 overflow-hidden bg-black text-white text-center'>
-      <p className="text-lg font-medium">© 2024 Ren Louie Peralta. All rights reserved.</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
-      <p>Footer</p>
+    <div className='w-full flex justify-center bg-black'>
+      <div className="relative w-11/12">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+      </div>
+    </div>
+    <div
+      id="footer"
+      className="bg-black border-t border-white/10 text-off-white"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+
+        {/* Brand / About */}
+        <div>
+          <h2 className="text-xl font-semibold mb-3">Ren Louie Peralta</h2>
+          <p className="text-sm text-slate-gray leading-relaxed max-w-sm">
+            Aspiring technology professional passionate about software development,
+            continuous learning, and building meaningful digital solutions.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg font-medium mb-4">Quick Links</h3>
+          <ul className="space-y-3 text-sm text-slate-gray">
+            <li>
+            <button className="hover:text-white transition" onClick={() => scrollToSection('home')}>
+              Home
+            </button>
+            </li>
+            <li>
+            <button className="hover:text-white transition" onClick={() => scrollToSection('about')}>
+              About Me
+            </button>
+            </li>
+            <li>
+            <button className="hover:text-white transition" onClick={() => scrollToSection('tour')}>
+              Tour Experience
+            </button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact & Socials */}
+        <div>
+          <h3 className="text-lg font-medium mb-4">Contact</h3>
+
+          <ul className="space-y-4 text-sm text-slate-gray">
+            <li className="flex items-center gap-3">
+              <FaEnvelope />
+              <a
+                href="mailto:renlouie.peralta@hcdc.edu.ph"
+                className="hover:text-white transition"
+              >
+                renlouie.peralta@hcdc.edu.ph
+              </a>
+            </li>
+
+            <li className="flex items-center gap-3">
+              <FaGithub />
+              <a
+                href="https://github.com/NenLoop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                github.com/NenLoop
+              </a>
+            </li>
+
+            <li className="flex items-center gap-3">
+              <FaMapMarkerAlt />
+              <span>Davao City, Philippines</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10 text-center py-6 text-sm text-slate-gray">
+        © 2025 Ren Louie Peralta. All rights reserved.
+      </div>
     </div>
 
     </>

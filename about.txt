@@ -21,3 +21,19 @@
       </div>
 
     </div>
+
+
+<div className="items-center flex flex-col">
+              <MdOutlinePlace size={24}/>
+              <p>Companies</p>
+            </div>
+            
+  <div className="items-center flex flex-col">
+              <GrCertificate size={24}/>
+              <p>Certificate</p>
+            </div>
+
+    <div className="items-center flex flex-col">
+              <SiMinds size={24}/>
+              <p>Reflection</p>
+            </div>
