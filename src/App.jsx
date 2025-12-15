@@ -106,48 +106,48 @@ function App() {
       <div className="h-screen absolute inset-0" id="vanta"></div>
       <div className="relative mx-auto max-w-2xl">
         <div className="text-center">
-          <h1 className="text-7xl text-neon-purple font-bold">Ren Louie Peralta</h1>
-          <h2 className="text-5xl text-soft-white font-semibold mt-6">Self Taught Web Developer</h2>
-          <h3 className="text-2xl text-amber-gold font-medium mt-6">Davao City, Philippines</h3>
+          <h1 className="text-lg md:text-xl lg:text-2xl text-neon-purple font-bold">Ren Louie Peralta</h1>
+          <h2 className="text-md md:text-lg lg:text-xl text-soft-white font-semibold mt-2 md:mt-3">Self Taught Web Developer</h2>
+          <h3 className="text-sm md:text-md lg:text-lg text-amber-gold font-medium mt-2 md:mt-3">Davao City, Philippines</h3>
           {/* <h2 className="text-3xl text-off-white font-medium mt-4">I Specialized in sleeping</h2> */}
-          <div className="flex flex-row justify-center mt-6 space-x-8">
-            <button className="text-2xl px-6 py-4 bg-transparent border-2 border-magenta rounded-lg text-off-white font-medium cursor-pointer mt-2" onClick={() => scrollToSection('footer')}>Contact Me</button>
-            <button className="text-2xl px-6 py-4 bg-transparent border-2 border-magenta rounded-lg text-off-white font-medium cursor-pointer mt-2">My Contributions</button>
+          <div className="flex flex-row justify-center mt-4 md:mt-5 space-x-8">
+            <button className="text-sm md:text-md lg:text-lg px-2 py-2 bg-transparent border-2 border-magenta rounded-md text-off-white font-medium cursor-pointer" onClick={() => scrollToSection('footer')}>Contact Me</button>
+            <button className="text-sm md:text-md lg:text-lg px-2 py-2 bg-transparent border-2 border-magenta rounded-md text-off-white font-medium cursor-pointer">My Contributions</button>
           </div>
-          <div className='mt-4'>
-            <h1 className="text-2xl text-amber-gold font-medium mt-8">My Tech Stack</h1>
-            <div className="flex flex-wrap space-x-8 justify-center">
-              <div className='relative group inline-block  mt-8'>
+          <div className='mt-4 md:mt-5'>
+            <h1 className="text-md md:text-lg lg:text-xl text-amber-gold font-medium">My Tech Stack</h1>
+            <div className="flex flex-wrap space-x-8 justify-center mt-4 md:mt-5">
+              <div className='relative group inline-block'>
                 <img src='/icons/javascript-logo-final.png' className='w-10 h-10'/>
                 <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
                   JavaScript
                 </span>
               </div>
-              <div className='relative group inline-block  mt-8'>
+              <div className='relative group inline-block'>
                 <img src='/icons/tailwind-logo.png' className='w-10 h-10'/> 
                 <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
                  Tailwind
                 </span>
               </div>
-              <div className='relative group inline-block  mt-8'>
+              <div className='relative group inline-block'>
                 <img src='/icons/java-logo.png' className='w-10 h-10'/>
                 <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
                   Java
                 </span>
               </div>
-              <div className='relative group inline-block  mt-8'>
+              <div className='relative group inline-block'>
                 <img src='/icons/python-logo-removebg-preview.png' className='w-10 h-10'/>
                 <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
                   Python
                 </span>
               </div>
-              <div className='relative group inline-block  mt-8'>
+              <div className='relative group inline-block'>
                 <img src='/icons/django-logo.png' className='w-10 h-10'/>
                 <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
                   Django
                 </span>
               </div>
-              <div className='relative group inline-block  mt-8'>
+              <div className='relative group inline-block'>
                 <img src='/icons/postgresql-logo-final.png' className='w-10 h-10'/>
                 <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 whitespace-nowrap hidden group-hover:block">
                   PostgreSQL
