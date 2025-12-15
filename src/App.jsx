@@ -3,6 +3,13 @@ import './App.css'
 import WAVES from 'vanta/src/vanta.waves'
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [modalSrc, setModalSrc] = useState('') // which image to show
+
+  const openModal = (src) => {
+    setModalSrc(src)
+    setIsOpen(true)
+  }
 
   useEffect(() => {
     WAVES({
@@ -113,7 +120,7 @@ function App() {
         </div>
       </div>
     </div>
-    <div id="about" className="min-h-screen bg-violet-black text-white scroll-mt-18 flex py-28">
+    <div id="about" className="min-h-screen bg-obsidian-black text-white scroll-mt-18 flex py-28">
       <div className="mx-auto w-full max-w-7xl px-6">
 
         {/* Main Content */}
@@ -125,8 +132,33 @@ function App() {
               src="/pictures/prof.png"
               alt="Profile"
               className="w-68 h-64 object-cover rounded-lg"
+              onClick={() => openModal('/pictures/prof.png')}
             />
           </div>
+          {isOpen && (
+            <div
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+              onClick={() => setIsOpen(false)} // clicking outside closes modal
+            >
+              <div className="relative">
+                {/* Close button */}
+                <button
+                  className="absolute top-2 right-2 text-black text-2xl font-bold z-50 hover:text-amber-500"
+                  onClick={() => setIsOpen(false)}
+                >
+                  ×
+                </button>
+
+                {/* Enlarged image */}
+                <img
+                  src={modalSrc}
+                  alt="Enlarged"
+                  className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-lg"
+                  onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+                />
+              </div>
+            </div>
+          )}
 
           {/* Text Content */}
           <div className="md:w-2/3 text-left">
@@ -152,24 +184,28 @@ function App() {
             {/* Age / Info */}
           </div>
         </div>
-        <div className="mx-auto max-w-4xl items-center flex flex-wrap justify-center mt-18 gap-12 text-sm text-gray-300 space-y-1">
-          <div className="bg-obsidian-black rounded-xl w-48 py-8 text-center">
+        <div className="mx-auto max-w-4xl items-center flex flex-wrap justify-center mt-18 gap-16 text-sm text-gray-300 space-y-1">
+          <div className="bg-violet-black rounded-xl w-48 py-6 text-center">
             <p className='mb-2 text-xl text-amber-gold'>20</p>
             <p className='text-xl text-slate-gray'>Years Old</p>
           </div>
-          <div className="bg-obsidian-black rounded-xl w-48 py-8 text-center">
+          <div className="bg-violet-black rounded-xl w-48 py-6 text-center">
             <p className='mb-2 text-xl text-amber-gold'>Third</p>
             <p className='text-xl text-slate-gray'>Year Level</p>
           </div>
-          <div className="bg-obsidian-black rounded-xl w-48 py-8 text-center">
+          <div className="bg-violet-black rounded-xl w-48 py-6 text-center">
             <p className='mb-2 text-xl text-amber-gold'>BSIT</p>
             <p className='text-xl text-slate-gray'>Course Program</p>
           </div>
         </div>
       </div>
     </div>
-
-    <div id="tour" className='h-screen'>
+    <div className='w-full flex justify-center bg-black'>
+      <div className="relative w-11/12">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+      </div>
+    </div>
+    <div id="tour" className='h-screen bg-obsidian-black'>
       <div className='mx-auto max-w-xl items-center text-center py-10'>
         <h2 className="text-2xl font-medium inline">Tour Experience</h2>
         <div className="flex flex-wrap justify-center">
@@ -179,9 +215,6 @@ function App() {
           
         </div>
       </div>
-
-    </div>
-    <div id="contact" className='h-screen'>
 
     </div>
     <div id="footer" className='max-h-48 overflow-hidden bg-black text-white text-center'>
